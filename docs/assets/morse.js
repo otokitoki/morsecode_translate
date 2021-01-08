@@ -91,8 +91,9 @@ function init(){
   r_btn.addEventListener("click",
     function(){
       const morse = document.getElementById("text").value;
-      
+      console.log(morse);
       morse_array = morse.split(/( |　)/g);
+      console.log(morse_array);
       //text = text.replace(/( |　)/g,"");
       
       
