@@ -1,22 +1,22 @@
 const morse_obj = {"イ":"・－",
 "ロ":"・－・－",
-"ハ":"－・・・",
+"ハ":"－・・・","バ":"－・・・　・・",
 "ニ":"－・－・",
-"ホ":"－・・",
-"ヘ":"・",
-"ト":"・・－・・",
-"チ":"・・－・",
+"ホ":"－・・","ボ":"－・・　・・",
+"ヘ":"・","ベ":"・　・・",
+"ト":"・・－・・","ド":"・・－・・　・・",
+"チ":"・・－・","ヂ":"・・－・　・・",
 "リ":"－－・",
 "ヌ":"・・・・",
 "ル":"－・－－・",
 "ヲ":"・－－－",
 "ワ":"－・－",
-"カ":"・－・・",
+"カ":"・－・・","ガ":"・－・・　・・",
 "ヨ":"－－",
-"タ":"－・",
+"タ":"－・","ダ":"－・　・・",
 "レ":"－－－",
-"ソ":"－－－・",
-"ツ":"・－－・",
+"ソ":"－－－・","ゾ":"－－－・　・・",
+"ツ":"・－－・","ヅ":"・－－・　・・",
 "ネ":"－－・－",
 "ナ":"・－・",
 "ラ":"・・・",
@@ -25,32 +25,35 @@ const morse_obj = {"イ":"・－",
 "ヰ":"・－・・－",
 "ノ":"・・－－",
 "オ":"・－・・・",
-"ク":"・・・－",
+"ク":"・・・－","グ":"・・・－　・・",
 "ヤ":"・－－",
 "マ":"－・・－",
-"ケ":"－・－－",
-"フ":"－－・・",
-"コ":"－－－－",
+"ケ":"－・－－","ゲ":"－・－－　・・",
+"フ":"－－・・","ブ":"－－・・　・・",
+"コ":"－－－－","ゴ":"－－－－　・・",
 "エ":"－・－－－",
-"テ":"・－・－－",
+"テ":"・－・－－","デ":"・－・－－　・・",
 "ア":"－－・－－",
-"サ":"－・－・－",
-"キ":"－・－・・",
+"サ":"－・－・－","ザ":"－・－・－　・・",
+"キ":"－・－・・","ギ":"－・－・・　・・",
 "ユ":"－・・－－",
 "メ":"－・・・－",
 "ミ":"・・－・－",
-"シ":"－－・－・",
+"シ":"－－・－・","ジ":"－－・－・　・・",
 "ヱ":"・－－・・",
-"ヒ":"－－・・－",
+"ヒ":"－－・・－","ビ":"－－・・－　・・",
 "モ":"－・・－・",
-"セ":"・－－－・",
-"ス":"－－－・－",
+"セ":"・－－－・","ゼ":"・－－－・　・・",
+"ス":"－－－・－","ズ":"－－－・－　・・",
 "ン":"・－・－・",
 "゛":"・・",
-"゜":"・・－－・"
+"゜":"・・－－・",
+"ー":"・－－・－",
+"、":"・－・－・－",
+"（":"－・－－・－","）":"・－・・－・"
 };
 
-const object2 = Object.fromEntries(
+const r_morse_obj = Object.fromEntries(
   Object.entries(morse_obj)
   .map(([ key, val ]) => [val,key])
 );
@@ -67,7 +70,7 @@ function init(){
           .then(res => {
             data = res.converted; // `data.json()` の呼び出しで解釈された JSON データ
             console.log(data);
-            data = data.replace(/(¥s|　)/g,"");
+            data = data.replace(/( |　)/g,"");
             console.log(data);
             const data_kata = data.replace(/[ぁ-ん]/g, function(s) {
             return String.fromCharCode(s.charCodeAt(0) + 0x60);
@@ -81,6 +84,25 @@ function init(){
           document.getElementById("result").innerText = morse_space;
       });
       
+    },
+    false);
+  
+  const r_btn = document.getElementById("r_btn");
+  r_btn.addEventListener("click",
+    function(){
+      const morse = document.getElementById("text").value;
+      
+      morse_array = moorse.split(/( |　)/g);
+      //text = text.replace(/( |　)/g,"");
+      
+      
+      const text = morse_array.map((e)=>{
+        return r_morse_obj[e];
+      });
+      
+      console.log(text);
+      document.getElementById("result").style.display = "block";
+      document.getElementById("result").innerText = text;
     },
     false);
 
