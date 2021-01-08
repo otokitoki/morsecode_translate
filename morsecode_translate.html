@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    
+    <title>morsecode_translate</title>
+   
+    <link rel="stylesheet" media="all" href="./assets/morse.css"/>
+    <script src="./assets/morse.js"></script>
+  </head>
+
+  <body onload="init()">
+    <!-- <div id="panel"> -->
+        <div class="page-cover"></div>
+        <div class="header"></div>
+        <div class="header-space"></div>
+        <div class="main">
+          <div class="main-search">
+            <div class="search">
+              <h1 class="exp">変換したい言葉を入力してください。</h1>
+               <input class="search-box" id="text" data-model="words" placeholder="例) 東京タワー" />
+               <ul class="suggestions"></ul>
+               <button class="search-button" data-model="words" id="btn">変換</button>
+               <ul class="suggestions"></ul>
+               <div class="search-box result-box" id="result" data-model="words"></div>
+            </div>
+          </div>
+        </div>
+  </body>
+</html>
