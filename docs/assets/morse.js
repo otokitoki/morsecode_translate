@@ -62,7 +62,7 @@ function init(){
   btn.addEventListener("click",
     function(){
       const text = document.getElementById("text").value;
-      const data = {"app_id":"c31834d1765b52b67c936dcfc66d9e63fb624fb957157c2a700f2d9296d3f8db","sentence":text, "output_type":"katakana"};
+      let data = {"app_id":"c31834d1765b52b67c936dcfc66d9e63fb624fb957157c2a700f2d9296d3f8db","sentence":text, "output_type":"katakana"};
       postData('https://labs.goo.ne.jp/api/hiragana', data)
           .then(res => {
             data = res.converted; // `data.json()` の呼び出しで解釈された JSON データ
