@@ -62,6 +62,11 @@ function init(){
   const btn = document.getElementById("btn");
   btn.addEventListener("click",
     function(){
+      const data = {"app_id":"c31834d1765b52b67c936dcfc66d9e63fb624fb957157c2a700f2d9296d3f8db","sentence":text, "output_type":"katakana"};
+      postData('https://labs.goo.ne.jp/api/hiragana', data)
+          .then(res => {
+            console.log(res); // `data.json()` の呼び出しで解釈された JSON データ
+      });
       const text = document.getElementById("text").value;
       const text_kata = text.replace(/[ぁ-ん]/g, function(s) {
         return String.fromCharCode(s.charCodeAt(0) + 0x60);
@@ -79,8 +84,27 @@ function init(){
 }
 
 
+// POST メソッドの実装の例
+async function postData(url = '', data = {}) {
+  // 既定のオプションには * が付いています
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(data) // 本文のデータ型は "Content-Type" ヘッダーと一致する必要があります
+  })
+  return response.json(); // レスポンスの JSON を解析
+}
+
+postData('https://example.com/answer', data)
+  .then(res => {
+    console.log(res); // `data.json()` の呼び出しで解釈された JSON データ
+  });
 
 
+data = {"app_id":"c31834d1765b52b67c936dcfc66d9e63fb624fb957157c2a700f2d9296d3f8db","sentence":text, "output_type":"katakana"}
 
 
 
