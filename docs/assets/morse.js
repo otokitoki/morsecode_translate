@@ -51,6 +51,7 @@ const morse_obj = {"イ":"・－",
 "ー":"・－－・－",
 "、":"・－・－・－",
 "（":"－・－－・－","）":"・－・・－・"
+"　":""," ":""
 };
 
 const r_morse_obj = Object.fromEntries(
