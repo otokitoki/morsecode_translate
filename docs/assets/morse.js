@@ -67,14 +67,14 @@ function init(){
           .then(res => {
             data = res.converted; // `data.json()` の呼び出しで解釈された JSON データ
             console.log(data);
-            data.replace(" ","");
+            data.replace("　","");
             console.log(data);
-            const text_kata = text.replace(/[ぁ-ん]/g, function(s) {
+            const data_kata = data.replace(/[ぁ-ん]/g, function(s) {
             return String.fromCharCode(s.charCodeAt(0) + 0x60);
           });
-          const morse = Array.prototype.map.call(text_kata,(c)=>{
+          const morse = Array.prototype.map.call(data_kata,(c)=>{
             return morse_obj[c];
-          });
+          //});
           const morse_space = morse.join("　")
           console.log(morse_space);
           document.getElementById("result").style.display = "block";
