@@ -1,3 +1,4 @@
+import chalk from "chalk";
 const morse_obj = {"イ":"・－",
 "ロ":"・－・－",
 "ハ":"－・・・",
@@ -69,7 +70,7 @@ function init(){
         return morse_obj[c];
       });
       const morse_space = morse.join("　")
-      console.log(morse_space);
+      console.log(chalk.yellow(morse_space));
       document.getElementById("result").style.display = "block";
       document.getElementById("result").innerText = morse_space;
     },
