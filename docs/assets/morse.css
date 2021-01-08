@@ -24,7 +24,7 @@ body .search input,body .register-form input{width:95%;padding:12px 2%;font-size
 }
 
 body .search textarea,body .register-form textarea{width:95%;height:70px;padding:2%;font-size:16px}
-body .search button,body .register-form button{width:45%;margin:10px 0 10px;padding:12px 5px;font-size:16px;background:#c44;color:#fff;border:none;cursor:pointer;border-radius:3px}body .search button.cancel,body .register-form button.cancel{background:none;color:#c44;border:solid 1px #c44}
+body .search button,body .register-form button{width:45%;margin:10px 10px;padding:12px 0;font-size:16px;background:#c44;color:#fff;border:none;cursor:pointer;border-radius:3px}body .search button.cancel,body .register-form button.cancel{background:none;color:#c44;border:solid 1px #c44}
 /*body .search p.sub-comment,body .register-form p.sub-comment{padding-top:5px}
 body .search p.sub-comment a.wrong-reading,body .register-form p.sub-comment a.wrong-reading{text-decoration:underline;cursor:pointer;font-weight:bold;font-size:110%}
 body .menu-button{position:fixed;bottom:20px;right:20px;height:25px;width:25px;padding:18px;border-radius:50%;font-size:22px;background:#c44;color:#fff;cursor:pointer;line-height:23px;z-index:50000}
