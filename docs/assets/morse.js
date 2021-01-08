@@ -74,7 +74,7 @@ function init(){
           });
           const morse = Array.prototype.map.call(data_kata,(c)=>{
             return morse_obj[c];
-          //});
+          });
           const morse_space = morse.join("　")
           console.log(morse_space);
           document.getElementById("result").style.display = "block";
