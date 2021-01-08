@@ -96,10 +96,10 @@ function init(){
       //text = text.replace(/( |　)/g,"");
       
       
-      const text = morse_array.map((e)=>{
+      const text_array = morse_array.map((e)=>{
         return r_morse_obj[e];
       });
-      
+      const text = text_array.join("")
       console.log(text);
       document.getElementById("result").style.display = "block";
       document.getElementById("result").innerText = text;
