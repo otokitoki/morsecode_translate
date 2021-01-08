@@ -91,7 +91,7 @@ function init(){
     function(){
       const morse = document.getElementById("text").value;
       
-      morse_array = moorse.split(/( |　)/g);
+      morse_array = morse.split(/( |　)/g);
       //text = text.replace(/( |　)/g,"");
       
       
