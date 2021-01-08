@@ -70,7 +70,7 @@ function init(){
       });
       const morse_space = morse.join("　")
       console.log(morse_space);
-      document.getElementById("result").style.display = "initial";
+      document.getElementById("result").style.display = "block";
       document.getElementById("result").innerText = morse_space;
     },
     false);
