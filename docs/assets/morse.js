@@ -67,7 +67,7 @@ function init(){
           .then(res => {
             data = res.converted; // `data.json()` の呼び出しで解釈された JSON データ
             console.log(data);
-            data = data.replace("　","").replace(" ","");
+            data = data.replace(/( |　)/g,"");
             console.log(data);
             const data_kata = data.replace(/[ぁ-ん]/g, function(s) {
             return String.fromCharCode(s.charCodeAt(0) + 0x60);
