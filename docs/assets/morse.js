@@ -57,7 +57,6 @@ const r_morse_obj = Object.fromEntries(
   Object.entries(morse_obj)
   .map(([ key, val ]) => [val,key])
 );
-console.log(object2);
 
 function init(){
 
