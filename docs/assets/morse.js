@@ -97,11 +97,6 @@ async function postData(url = '', data = {}) {
   return response.json(); // レスポンスの JSON を解析
 }
 
-postData('https://example.com/answer', data)
-  .then(res => {
-    console.log(res); // `data.json()` の呼び出しで解釈された JSON データ
-  });
-
 
 
 
