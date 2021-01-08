@@ -1,4 +1,3 @@
-import chalk from "chalk";
 const morse_obj = {"イ":"・－",
 "ロ":"・－・－",
 "ハ":"－・・・",
@@ -75,7 +74,7 @@ function init(){
         return morse_obj[c];
       });
       const morse_space = morse.join("　")
-      console.log(chalk.yellow(morse_space));
+      console.log(morse_space);
       document.getElementById("result").style.display = "block";
       document.getElementById("result").innerText = morse_space;
     },
@@ -103,8 +102,6 @@ postData('https://example.com/answer', data)
     console.log(res); // `data.json()` の呼び出しで解釈された JSON データ
   });
 
-
-data = {"app_id":"c31834d1765b52b67c936dcfc66d9e63fb624fb957157c2a700f2d9296d3f8db","sentence":text, "output_type":"katakana"}
 
 
 
